@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MAMA ko chit  tal</title>
+<img src="mama.jpg" alt="Flowers in Chania">
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin-top: 50px;
+        color : purple
+    }
+     {
+        font-size: 2em;
+        margin-bottom: 20px;
+    }
+</style>
+</head>
+<body>
+    <h1>Mama ko chit tal</h1>
+    <div id="countup"></div>
+
+    <script>
+        // Function to calculate and display countup
+        function updateCountup() {
+            // Anniversary date (example: January 1, 2000)
+            const anniversaryDate = new Date('2024-05-19');
+            const currentDate = new Date();
+
+            // Calculate the difference in milliseconds
+            const difference = currentDate - anniversaryDate;
+
+            // Convert difference from milliseconds to days, hours, minutes, seconds
+            const totalSeconds = Math.floor(difference / 1000);
+            const days = Math.floor(totalSeconds / (3600 * 24));
+            const hours = Math.floor((totalSeconds % (3600 * 24)) / 3600);
+            const minutes = Math.floor((totalSeconds % 3600) / 60);
+            const seconds = totalSeconds % 60;
+
+            // Display the countup in the HTML element
+            const countupElement = document.getElementById('countup');
+            countupElement.innerHTML = `
+                ${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds
+            `;
+
+            // Update every second
+            setTimeout(updateCountup, 1000);
+        }
+
+        // Initial call to start the countup
+        updateCountup();
+    </script>
+    <h3>Since 19th May 2024</h3>
+    <h1>カイン❤️リン</h1>
+</body>
+</html>
